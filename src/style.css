@@ -6,18 +6,34 @@
 body {
   background-color: #374151;
   color: #fafafa;
-  padding: 48px 64px;
+  padding: 48px 64px 0px;
+  font-family: "Sono", sans-serif;
 }
 
 /* hides anything that this class is added to */
-
 .hidden {
   display: none !important;
 }
+
+.message {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
 /* Main Layout */
 #root {
   max-width: 1000px;
   margin: 0 auto;
+
   /* same as
  margin-left: auto;
   margin-right: auto;*/
@@ -37,6 +53,8 @@ body {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 48px;
+
+  height: calc(100vh - 48px - 68px - 40px);
 }
 @media (max-width: 900px) {
   .main {
@@ -44,6 +62,9 @@ body {
   }
 }
 
+section {
+  padding-bottom: 40px;
+}
 /* elements */
 
 .logo {
@@ -81,7 +102,7 @@ body {
   line-height: 1px;
   text-transform: uppercase;
   font-size: 17px;
-  padding: 16px 0 13px;
+  padding: 18px 0 18px;
   color: inherit;
   cursor: pointer;
   /* good practice to make the radius large so that the effect of roundedness shows up regardless of size of browser*/
@@ -173,9 +194,13 @@ h1 {
   background-color: #292524;
 }
 
+.vote-buttons button:disabled {
+  background-color: #44403c;
+}
+
 .tag {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Coiny", sans-serif;
   padding-left: 10px;
   padding-right: 10px;
@@ -221,7 +246,7 @@ h1 {
 
 @media (max-width: 1000px) {
   body {
-    padding: 32px 48px;
+    /* padding: 32px 48px; */
   }
 
   .fact-form {
@@ -237,4 +262,29 @@ h1 {
 
 ul {
   list-style: none;
+}
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 24px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .fact-form {
+    padding: 16px;
+  }
+
+  .fact {
+    padding: 12px 16px;
+  }
 }

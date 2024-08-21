@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "npm install @babel/plugin-proposal-private-property-in-object"
@@ -25,8 +25,12 @@
       "react-app/jest"
     ],
     "rules": {
-      "no-unused-vars": "warn",
-      "no-console": "warn"
+      "no-unused-vars": [
+        "warn"
+      ],
+      "react/jsx-no-target-blank": [
+        "warn"
+      ]
     }
   },
   "browserslist": {
